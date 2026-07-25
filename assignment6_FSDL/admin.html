@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Admin Panel</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body class="login-body">
+
+<div class="login-container">
+<h2>Admin Dashboard</h2>
+
+<div id="bookings"></div>
+
+</div>
+
+<script>
+
+function loadBookings() {
+    fetch("/allBookings")
+    .then(res => res.json())
+    .then(data => {
+
+        let html = "";
+
+        data.forEach(b => {
+            html += `
+                <div style="border:1px solid #ccc; padding:10px; margin:10px;">
+                    <p><b>${b.name}</b> (${b.vehicle})</p>
+                    <p>${b.date} - ${b.time}</p>
+
+                    <button onclick="deleteBooking('${b._id}')">
+                        Delete
+                    </button>
+                </div>
+            `;
+        });
+
+        document.getElementById("bookings").innerHTML = html;
+    });
+}
+
+function deleteBooking(id) {
+    fetch("/delete/" + id, {
+        method: "DELETE"
+    })
+    .then(() => loadBookings());
+}
+
+// load on start
+loadBookings();
+
+</script>
+
+</body>
+</html>

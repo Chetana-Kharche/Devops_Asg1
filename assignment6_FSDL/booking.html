@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Booking</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.container{
+    display:flex;
+    gap:30px;
+}
+
+/* right side */
+.slots{
+    width:250px;
+    background:white;
+    padding:15px;
+    border-radius:10px;
+    height:350px;
+    overflow:auto;
+}
+
+.slot-item{
+    border-bottom:1px solid #ccc;
+    padding:8px 0;
+    font-size:14px;
+}
+</style>
+</head>
+
+<body class="login-body">
+
+<div class="container">
+
+<!-- LEFT SIDE FORM -->
+<div class="login-container">
+<h2>Book Appointment</h2>
+
+<form action="/book" method="POST">
+
+<input type="text" name="name" placeholder="Name" required>
+<input type="text" name="phone" placeholder="Phone" required>
+<input type="text" name="vehicle" placeholder="Vehicle" required>
+<input type="text" name="address" placeholder="Address" required>
+
+<label>Date</label>
+<input type="date" name="date" id="dateInput" required>
+
+<label>Time</label>
+<input type="time" name="time" min="09:00" max="20:00" required>
+
+<button type="submit">Book</button>
+
+</form>
+</div>
+
+<!-- RIGHT SIDE SLOTS -->
+<div class="slots">
+<h3>Booked Slots</h3>
+<div id="slotList"></div>
+</div>
+
+</div>
+
+<script>
+
+// date restriction
+let today = new Date();
+today.setDate(today.getDate() + 1);
+let minDate = today.toISOString().split("T")[0];
+document.getElementById("dateInput").min = minDate;
+
+
+// fetch booked slots
+function loadSlots(){
+    fetch("/slots")
+    .then(res => res.json())
+    .then(data => {
+
+        let html = "";
+
+        data.forEach(s => {
+            html += `
+                <div class="slot-item">
+                    📅 ${s.date} <br>
+                    ⏰ ${s.time}
+                </div>
+            `;
+        });
+
+        document.getElementById("slotList").innerHTML = html;
+    });
+}
+
+// load on page open
+loadSlots();
+
+</script>
+
+</body>
+</html>
