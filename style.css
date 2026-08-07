@@ -1,0 +1,145 @@
+:root{
+    --primary:#2563eb;
+    --secondary:#9333ea;
+    --accent:#22c55e;
+    --dark:#0f172a;
+    --light:#f8fafc;
+}
+
+body{
+    font-family:'Segoe UI',sans-serif;
+    background:var(--light);
+    color:#1e293b;
+    scroll-behavior:smooth;
+}
+
+section{
+    padding:80px 0;
+}
+
+/* Navbar */
+.navbar{background:var(--dark);}
+.navbar-nav .nav-link{
+    position:relative;
+}
+.navbar-nav .nav-link::after{
+    content:'';
+    width:0;
+    height:2px;
+    background:var(--accent);
+    position:absolute;
+    bottom:0;
+    left:0;
+    transition:0.3s;
+}
+.navbar-nav .nav-link:hover::after{
+    width:100%;
+}
+
+/* Hero */
+.hero{
+    background:linear-gradient(135deg,var(--primary),var(--secondary));
+    color:white;
+}
+.hero-content{
+    display:flex;
+    align-items:center;
+    gap:50px;
+}
+.hero-img{
+    width:220px;
+    height:220px;
+    border-radius:50%;
+    border:5px solid white;
+    object-fit:cover;
+    animation:float 4s ease-in-out infinite;
+}
+@keyframes float{
+    0%{transform:translateY(0);}
+    50%{transform:translateY(-12px);}
+    100%{transform:translateY(0);}
+}
+
+/* Titles */
+.section-title{
+    text-align:center;
+    font-weight:600;
+    margin-bottom:40px;
+}
+
+/* Skills */
+.skills-container{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:20px;
+}
+.skill-btn{
+    padding:10px 22px;
+    border-radius:30px;
+    font-weight:500;
+    transition:0.3s;
+}
+.skill-btn:hover{
+    transform:translateY(-6px) scale(1.05);
+    box-shadow:0 10px 20px rgba(0,0,0,0.15);
+}
+
+.skill-html{background:#e34c26;color:white;}
+.skill-css{background:#264de4;color:white;}
+.skill-js{background:#f7df1e;}
+.skill-bootstrap{background:#7952b3;color:white;}
+.skill-java{background:#f89820;}
+.skill-cpp{background:#1fa934;color:white;}
+.skill-node{background:#3c873a;color:white;}
+.skill-sql{background:#0f766e;color:white;}
+.skill-mongo{background:#10b981;color:white;}
+.skill-r{background:#2563eb;color:white;}
+
+.skills-links a{
+    color:var(--primary);
+    font-weight:500;
+}
+.skills-links a:hover{
+    color:var(--secondary);
+}
+
+/* Projects */
+.card{
+    border:none;
+    border-radius:16px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.08);
+    transition:0.4s;
+}
+.card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 20px 40px rgba(0,0,0,0.15);
+}
+.card-img-top{
+    width:80px;
+    height:80px;
+    margin:20px auto 0;
+    object-fit:contain;
+}
+
+/* Footer */
+footer{
+    background:var(--dark);
+    color:white;
+    text-align:center;
+    padding:15px;
+}
+
+/* Scroll Reveal */
+.reveal{
+    opacity:0;
+    transform:translateY(40px);
+    transition:0.8s;
+}
+.reveal.active{
+    opacity:1;
+    transform:translateY(0);
+}
+.page{
+    min-height:100vh;
+}
