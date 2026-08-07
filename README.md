@@ -19,30 +19,60 @@ This repository contains the practical assignments completed as part of the DevO
 ```
 Devops_Asg1/
 │
-├── Assignment1/
-│   ├── README.md
-│   └── Source Files
+├── 📁 Assignment1/
+│   ├── 📄 README.md
+│   └── 📁 Source Files/
+│       ├── HTML Files
+│       ├── CSS Files
+│       ├── JavaScript Files
+│       └── Output Screenshots
 │
-├── Assignment2/
-│   ├── README.md
-│   └── Source Files
+├── 📁 docs/
+│   ├── 📄 README.md
+│   └── 📁 Source Files/
+│       ├── HTML Files
+│       ├── CSS Files
+│       ├── Images
+│       └── Portfolio Website
 │
-├── Assignement3/
-│   ├── README.md
-│   └── Source Files
+├── 📁 Assignment3/
+│   ├── 📄 README.md
+│   └── 📁 Source Files/
+│       ├── Source Code
+│       ├── Configuration Files
+│       └── Output Screenshots
 │
-├── assignment6_FSDL/
-│   ├── README.md
-│   └── Source Files
+├── 📁 assignment6_FSDL/
+│   ├── 📄 README.md
+│   └── 📁 Source Files/
+│       ├── HTML
+│       ├── CSS
+│       ├── JavaScript
+│       └── Screenshots
 │
-├── Assignment7/
-│   ├── README.md
-│   ├── frontend/
-│   ├── backend/
-│   └── Source Files
+├── 📁 Assignment7/
+│   ├── 📄 README.md
+│   ├── 📁 frontend/
+│   │   ├── HTML
+│   │   ├── CSS
+│   │   ├── JavaScript
+│   │   └── Assets
+│   │
+│   ├── 📁 backend/
+│   │   ├── Node.js
+│   │   ├── Express.js
+│   │   ├── Routes
+│   │   ├── Controllers
+│   │   ├── Models
+│   │   └── Database
+│   │
+│   └── 📁 Source Files/
+│       ├── Documentation
+│       ├── Screenshots
+│       └── Additional Resources
 │
-├── .gitignore
-└── README.md
+├── 📄 .gitignore
+└── 📄 README.md
 ```
 
 ---
@@ -50,7 +80,6 @@ Devops_Asg1/
 ## Assignments Included
 
 - Assignment 1 – Basic HTML Webpage
-- Assignment 2 – Responsive Web Design using HTML, CSS & JavaScript
 - Assignment 3 – Login Page Design
 - Assignment 6 – Full Stack Web Application
 - Assignment 7 – MERN Stack Application
